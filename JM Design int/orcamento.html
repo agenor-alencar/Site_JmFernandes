@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <body>
+        <header>
+          
+           <h1 >JM Design de Interiores</h1>
+            <div>
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contatos.html">Contato</a></li>
+                    <li><a href="orcamento_.html">Orçamento</a></li>
+                </ul>
+             </div>    
+            </nav>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/jmfernandesmarcenaria/" target="_blank">
+                    <img src="img/instagram2.webp" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="img/facebook2.webp" alt="Facebook">
+                </a>
+            </div>
+        </header>
+
+        <section class="content">
+        <div class="container">
+            <div class="banner1">
+                <h2>Solicite um Orçamento</h2>
+            </div>
+                <form method="post">
+                <input type="text" name="name" placeholder="Nome Completo" required>
+                <input type="text" name="telefone" placeholder="Seu Telefone" required>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                <p class="botao">
+                    <input type="submit" value="Enviar" />
+            </form>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section about">
+              
+            </div>
+            <div class="footer-section links">
+              <h3>Links Importantes</h3>
+              <ul>
+                <li><a href="#">Mapa do Site</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Termos de Serviço</a></li>
+              </ul>
+            </div>
+            <div class="footer-section contact">
+              <h3>Contate-Nos</h3>
+              <p><i class="fas fa-map-marker-alt"></i> Q 12 mr 2 lote 19, Planaltina-GO</p>
+              <p><i class="fas fa-phone"></i> 61 99134-2514</p>
+              <p><i class="fas fa-envelope"></i>  jonathan_fsousa@yahoo.com.br</p>
+            </div>
+            <div class="footer-section social">
+              <h3></h3>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; 2024 JM Design de Interiores. Todos os direitos reservados.</p>
+          </div>
+    </footer>
+    <a href="https://wa.me/5561991342514" target="_blank" class="whatsapp-button">
+        <img src="img/whatsapp.png" alt="WhatsApp">
+    </a> 
+    <!-- Inclua o SDK EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("SEU_USER_ID");
+        })();
+    </script>
+    <script type="text/javascript">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Gera um número de template único
+            var templateParams = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            emailjs.send('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', templateParams)
+                .then(function(response) {
+                    console.log('Email enviado com sucesso!', response.status, response.text);
+                    alert('Email enviado com sucesso!');
+                }, function(error) {
+                    console.log('Ocorreu um erro ao enviar o email:', error);
+                    alert('Ocorreu um erro ao enviar o email.');
+                });
+        });
+    </script>  
+</body>
+</html>
